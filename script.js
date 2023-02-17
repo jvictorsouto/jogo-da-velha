@@ -2,21 +2,22 @@
 let venceu = '';
 let vez = 1;
 
-console.log(document.querySelector('#posicao1').style['backgroundImage'])
-
 function posicoesIdem(a, b, c){
-    console.log(a, b, c)
-    const posiA = document.querySelector('#posicao'+a).style['backgroundImage'];
+   
+    const posiA = document.querySelector('#posicao'+a).innerHTML;
     
-    const posiB = document.querySelector('#posicao'+b).style['backgroundImage'];
-    console.log('outro')
-    const posiC = document.querySelector('#posicao'+c).style['backgroundImage'];
+    const posiB = document.querySelector('#posicao'+b).innerHTML;
+  
+    const posiC = document.querySelector('#posicao'+c).innerHTML;
 
     if(posiA === posiB && posiB === posiC && posiA != 'none' && posiA != ''){
-        if(posiA.indexOf("1.png") >= 0)
-                venceu = "1";
-            else
-                venceu = "2";
+        if(posiA.indexOf("1.png") >= 0){
+                venceu = "O Jogador numero 1 venceu!!!!";
+        }        
+        else if(posiA.indexOf("2.png") >= 0){
+                venceu = "O Jogador numero 2 venceu!!!!";
+        }
+               
             return true;
     }
     else{
@@ -28,10 +29,28 @@ function fimJogo(){
     if(posicoesIdem(3, 5, 7) || posicoesIdem(1, 4, 7) || posicoesIdem(3, 6, 9) ||
         posicoesIdem(4, 5, 6) || posicoesIdem(1, 5, 9) || posicoesIdem(7, 8, 9) ||
         posicoesIdem(2, 5, 8) || posicoesIdem(1, 2, 3)){
-         alert(`O jogador ${venceu} venceu!!!`) 
+            
+       alert(`${venceu}`) 
+       const posi = document.querySelectorAll('td');
 
+       for(let i = 0; i < posi.length; i++){
+        posi[i].innerHTML = ""
+       }
     }
+    
 }
 
-posicoesIdem(1, 2, 3)
-fimJogo()
+const posi = document.querySelectorAll('td');
+
+for(let i = 0; i < posi.length; i++){
+ posi[i].addEventListener('click', function (e) {
+    e.target.innerHTML = `<img src="./img/${vez}.png">`;
+    setInterval(() => {
+        fimJogo()
+      }, 1000);
+    
+  if(vez == 1) vez=2;
+  else vez = 1; 
+ })
+
+}

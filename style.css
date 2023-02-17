@@ -5,3 +5,8 @@
 }
 
 td{height:50px;width:50px;border: 1px solid black;}
+
+td img{
+    max-width: 100%;
+    max-height: 100%;
+}
