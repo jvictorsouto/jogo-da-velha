@@ -8,26 +8,65 @@
     <title>JOGO DA VELHA</title>
 </head>
 <body>
-    <div>
-        <table>
-            <tr>
-                <td id="posicao1"></td>
-                <td id="posicao2"></td>
-                <td id="posicao3"></td>
-            </tr>
-            <tr>
-                <td id="posicao4"></td>
-                <td id="posicao5"></td>
-                <td id="posicao6"></td>
-            </tr>
-            <tr>
-                <td id="posicao7"></td>
-                <td id="posicao8"></td>
-                <td id="posicao9"></td>
-            </tr>
-        </table>
+    <img src="./img/confete.gif" class="confete" alt="" srcset="">
+    <div class="inicioJogo">
+        <h1>Bem vindo ao Jogo da Velha!</h1>
+        <h5>Desenvolvido por: João Victor Dias</h5>
+        <div class="campo1">
+            Nome Jogador 1: <input type="text">
+        </div>
+        <div class="campo2">
+            Nome Jogador 2: <input type="text">
+        </div>
+        <div class="iniciarJogo">
+            Iniciar o Jogo
+        </div>
     </div>
-    <h1 class='resultado'></h1>
+    <div class="container" style="display: none;">
+        <div class="placar">
+            <div class="jogador1">
+                <p class="nome"></p>
+                <p class="qtsGanhou"></p>
+            </div>
+            <div class="deuVelha">
+                <p>Deu Velha</p>
+                <p class="qtsVelha"></p>
+            </div>
+            <div class="jogador2">
+                <p class="nome"></p>
+                <p class="qtsGanhou"></p>
+            </div>
+        </div>
+
+        <div class="jogo">
+
+            <h1 class='resultado'></h1>
+
+            <table>
+                <tr>
+                    <td id="posicao1"></td>
+                    <td id="posicao2"></td>
+                    <td id="posicao3"></td>
+                </tr>
+                <tr>
+                    <td id="posicao4"></td>
+                    <td id="posicao5"></td>
+                    <td id="posicao6"></td>
+                </tr>
+                <tr>
+                    <td id="posicao7"></td>
+                    <td id="posicao8"></td>
+                    <td id="posicao9"></td>
+                </tr>
+            </table>
+            
+        </div>
+
+        <div class="botoes">
+            <div class="reset">ZERAR PLACAR</div>
+            <div class="inicio">VOLTAR AO INICIO</div>
+        </div>
+    </div>  
     <script src="script.js"></script>
 </body>
 </html>
