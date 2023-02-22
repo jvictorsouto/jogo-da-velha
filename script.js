@@ -19,7 +19,7 @@ const audioEmpate = new Audio("./mp3/empate.wav");
 const posi = document.querySelectorAll("td");
 
 document.querySelector(".iniciarJogo").addEventListener("click", () => {
-    console.log(document.querySelector(".campo1").getElementsByTagName("input")[0].value)
+    
   if (
       document.querySelector(".campo1").getElementsByTagName("input")[0].value !=
       '' &&
@@ -63,22 +63,20 @@ function atualizarPlacar() {
 }
 
 function posicoesIdem(a, b, c) {
-  const posiA = document.querySelector("#posicao" + a).innerHTML;
-
-  const posiB = document.querySelector("#posicao" + b).innerHTML;
-
-  const posiC = document.querySelector("#posicao" + c).innerHTML;
-
-  if (posiA === posiB && posiB === posiC && posiA != "none" && posiA != "") {
-    if (posiA.indexOf("1.png") >= 0) {
+  if (document.querySelector("#posicao" + a).innerHTML === document.querySelector("#posicao" + b).innerHTML && document.querySelector("#posicao" + b).innerHTML === document.querySelector("#posicao" + c).innerHTML && document.querySelector("#posicao" + a).innerHTML != "none" && document.querySelector("#posicao" + a).innerHTML != "") {
+    if (document.querySelector("#posicao" + a).innerHTML.indexOf("1.png") >= 0) {
       jogo.jogador1.qtsVenceu++;
-      jogo.venceu = "O Jogador numero 1 venceu!!!!";
-    } else if (posiA.indexOf("2.png") >= 0) {
+      jogo.venceu = "O Jogador numero 1 venceu!!!! <br> (clique para continuar)";
+    } else if (document.querySelector("#posicao" + a).innerHTML.indexOf("2.png") >= 0) {
       jogo.jogador2.qtsVenceu++;
-      jogo.venceu = "O Jogador numero 2 venceu!!!!";
+      jogo.venceu = "O Jogador numero 2 venceu!!!! <br> (clique para continuar)";
     }
+    document.querySelector("#posicao" + a).style.borderColor = 'green';
+    document.querySelector("#posicao" + b).style.borderColor = 'green';
+    document.querySelector("#posicao" + c).style.borderColor = 'green';
     document.querySelector(".confete").style.display = 'flex';
     atualizarPlacar();
+    
     return true;
   } else {
     return false;
@@ -98,14 +96,6 @@ function fimJogo() {
     audioVenceu.play();
     document.querySelector(".resultado").innerHTML = jogo.venceu;
 
-    setTimeout(() => {
-      for (let i = 0; i < posi.length; i++) {
-        jogo.venceu = "";
-        posi[i].innerHTML = "";
-        document.querySelector(".resultado").innerHTML = "";
-      }
-      jogo.vez = 1;
-    }, 1000);
   }
 }
 function empate() {
@@ -124,11 +114,13 @@ function empate() {
 
     setTimeout(() => {
       for (let i = 0; i < posi.length; i++) {
+        jogo.venceu = "";
         posi[i].innerHTML = "";
         document.querySelector(".resultado").innerHTML = "";
       }
       jogo.vez = 1;
-    }, 1000);
+    }, 1500);
+    
     atualizarPlacar();
   }
 }
@@ -151,6 +143,16 @@ for (let i = 0; i < posi.length; i++) {
 document.querySelector(".confete").addEventListener("click", () => {
     audioVenceu.pause();
     document.querySelector(".confete").style.display = 'none';
+    document.querySelector(".resultado").innerHTML = "";
+    for (let i = 0; i < posi.length; i++) {
+      posi[i].style.borderColor = 'white';
+    }
+    for (let i = 0; i < posi.length; i++) {
+      jogo.venceu = "";
+      posi[i].innerHTML = "";
+      
+    }
+    jogo.vez = 1;
 })
 document.querySelector(".reset").addEventListener("click", () => {
   document.querySelector(".jogador1").querySelector(".qtsGanhou").innerHTML = 0;
@@ -163,7 +165,7 @@ document.querySelector(".inicio").addEventListener("click", () => {
     document.querySelector(".container").style.display = 'none';
     document.querySelector(".campo1").getElementsByTagName("input")[0].value = '';
     document.querySelector(".campo2").getElementsByTagName("input")[0].value = '';
-    document.querySelector(".jogador1").querySelector(".qtsGanhou").innerHTML = 0;
-    document.querySelector(".jogador2").querySelector(".qtsGanhou").innerHTML = 0;
-    document.querySelector(".deuVelha").querySelector(".qtsVelha").innerHTML = 0;
+    jogo.jogador1.qtsVenceu = 0;
+    jogo.jogador2.qtsVenceu = 0;
+    jogo.deuVelha = 0;
   });

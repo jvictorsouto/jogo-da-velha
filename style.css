@@ -1,80 +1,162 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("https://fonts.cdnfonts.com/css/games");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Games", sans-serif;
 }
-.inicioJogo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    height: 100vh;
+body {
+  background: black;
 }
-.iniciarJogo{
-    background-color: green;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-top: 15px;
-    cursor: pointer;
+.inicioJogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  height: 100vh;
+  color: white;
 }
-.campo1{
-    margin: 15px auto;
+.iniciarJogo {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
 }
-.container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 800px;
-    width: 65%;
-    margin: auto;
+.iniciarJogo:hover {
+  background-color: rgb(6, 80, 6);
 }
-td{height:100px;width:100px;border: 1px solid black;}
+.campo1 {
+  margin: 15px auto;
+  color: blue;
+  font-weight: bold;
+}
+.campo2 {
+  color: red;
+  font-weight: bold;
+}
+.campo1:hover,
+.campo2:hover {
+  font-size: 20px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 800px;
+  width: 65%;
+  margin: auto;
+}
+td {
+  height: 100px;
+  width: 100px;
+  border: 2px solid white;
+}
 
-td img{
-    max-width: 100%;
-    max-height: 100%;
-    pointer-events: none;
+td img {
+  max-width: 70%;
+  max-height: 70%;
+  pointer-events: none;
+  margin-left: 14px;
 }
-.jogo{
-    display: flex;
-    margin: auto;
+.jogo {
+  display: flex;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.placar {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+}
+.jogador1,
+.jogador2,
+.deuVelha {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.jogador1 .nome {
+  font-weight: bold;
+  color: blue;
+}
+.jogador2 .nome {
+  font-weight: bold;
+  color: red;
+}
+.botoes {
+  display: flex;
+}
+.resultado{
+    color: white;
     width: 100%;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    text-align: center;
 }
-.placar{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
+.reset,
+.inicio {
+  background-color: rgb(172, 10, 10);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 100px;
+  margin-left: 20px;
+  display: flex;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 20px 10px;
 }
-.jogador1, .jogador2, .deuVelha{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.reset:hover {
+  background-color: rgb(99, 3, 3);
 }
-.botoes{
-    display: flex;
+.inicio {
+  background-color: rgb(97, 95, 95);
 }
-.reset, .inicio{
-    background-color: rgb(172, 10, 10);
-    color:white;
-    cursor: pointer;
-    margin-bottom: 100px;
-    margin-left: 20px;
-    display: flex;
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 20px 10px;
+.inicio:hover {
+  background-color: rgb(136, 135, 135);
 }
-.inicio{
-    background-color: rgb(97, 95, 95);
+.confete {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  position: absolute;
+  display: none;
 }
-.confete{
-    width:100%; height: 100%; opacity: 0.5; position: absolute;display: none;
+.deuVelha p:first-child {
+  font-weight: bold;
+}
+#posicao1 {
+  border-left: none;
+  border-top: none;
+}
+#posicao2 {
+  border-top: none;
+}
+#posicao3 {
+  border-right: none;
+  border-top: none;
+}
+#posicao4 {
+  border-left: none;
+}
+#posicao6 {
+  border-right: none;
+}
+#posicao7 {
+  border-left: none;
+  border-bottom: none;
+}
+#posicao8 {
+  border-bottom: none;
+}
+#posicao9 {
+  border-right: none;
+  border-bottom: none;
 }
