@@ -22,3 +22,12 @@ Jogo simples e intuitivo, o único controle usado será o seu mouse.
 ## Recomendações
 
 - Recomendo que use fone ou caixinhas de som quando for jogar, para que possa escutar as intrações enquanto joga
+
+
+## Apresentação 
+
+- link.com
+
+## Link para jogar
+
+- https://jvictorsouto.github.io/jogo-da-velha/
