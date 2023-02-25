@@ -26,8 +26,7 @@ Jogo simples e intuitivo, o único controle usado será o seu mouse.
 
 ## Apresentação 
 
-- link.com
-
+- https://docs.google.com/presentation/d/1Y4hz3eLzUNSYr0AYEjrW5HdX0j2HTqeJEiL-D7gqliw/edit#slide=id.gc6f80d1ff_0_0
 ## Link para jogar
 
 - https://jvictorsouto.github.io/jogo-da-velha/
